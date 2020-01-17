@@ -25,6 +25,7 @@ int main()
         printf("%d\t", A[i]);
     }
     getch();
+    return 0;
 }
 int arrsorted(int arr[], int n)
 {

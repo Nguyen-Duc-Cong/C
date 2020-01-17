@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <conio.h>
-int arrsorted(int arr[], int n);
-int swap(int &x, int &y);
+#define MAX 100
+void arroutput(int A[], int n);
+void removearr(int *A, int *n);
 int main()
 {
     int n;
@@ -13,44 +14,40 @@ int main()
         printf("Enter element[%d]: ", i);
         scanf("%d", &A[i]);
     }
-    printf("The original array:")
+    printf("The original array:");
+    arroutput(A, n);
+    removearr(A, &n);
+    printf("\nThe array after removing duplicate elements: ");
+    arroutput(A, n);
+    getch();
+    return 0;
+}
+
+void arroutput(int A[], int n)
+{
     for (int i = 0; i < n; i++)
     {
         printf("%d\t", A[i]);
     }
-    printf("\nThe array after removing duplicate elements:");
-    for (int i = n - 1; i > -1; i--)
-    {
-
-        printf("%d\t", A[i]);
-    }
-    getch();
+    printf("\n");
 }
-int arrsorted(int arr[], int n)
+void removearr(int *A, int *n)
 {
-    int i, j;
-    int haveSwap = 0;
-    for (i = 0; i < n - 1; i++)
+    for (int i = 0; i < *n - 1 ; i++)
     {
-        haveSwap = 0;
-        for (j = 0; j < n - i - 1; j++)
+        for (int j = i + 1; j < *n; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (A[i] == A[j])
             {
-                swap(arr[j], arr[j + 1]);
-                haveSwap = 1;
+
+                for (int k = j; k < *n - 1; k++)
+                {
+                    A[k] = A[k + 1];
+                }
+                
+                A[*n - 1] = NULL;
+                *n = *n - 1;
             }
         }
-        if (haveSwap == 0)
-        {
-            break;
-        }
     }
-}
-int swap(int &x, int &y)
-{
-    int t;
-    t = y;
-    x = y;
-    y = t;
 }
