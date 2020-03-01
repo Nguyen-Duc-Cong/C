@@ -25,7 +25,7 @@ int main()
     printf("List out name: \n");
     fun3(a, n);
     getch();
-    for (int i = 0; i < SIZE_LISE; i++)
+    for (int i = 0; i < n; i++)
     {
         free(a[i]);
     }
