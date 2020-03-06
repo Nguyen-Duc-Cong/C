@@ -6,13 +6,13 @@
 #include <math.h>
 
 
-void input(char arr[]);
+void inPut(char arr[]);
 
 int main(int argc, char const *argv[])
 {
     char *arr;
     arr = (char *)calloc(100, sizeof(char));
-    input(arr);
+    inPut(arr);
     int *coust;
     coust = (int *)calloc(256, sizeof(int));
     int len = strlen(arr); 
@@ -33,9 +33,10 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-void input(char arr[])
+void inPut(char arr[])
 {
     printf("Please enter string: ");
     fflush(stdin);
     gets(arr);
 }
+void outPut()

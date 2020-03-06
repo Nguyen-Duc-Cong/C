@@ -11,10 +11,10 @@ int main()
     char str[50],c ;
     
 	do{
-    printf("nhap vao chuoi: ");
+    printf("Please enter string:  ");
     fflush(stdin);
 	gets(str); 
-	printf("chuoi sau khi dao: ");
+	printf("The reversed string:  ");
 	daoString(str);
 	printf("\nPress any key to continue! or press esc to exit\n");
     fflush(stdin);
@@ -29,7 +29,7 @@ void daoString(char str[])
     for (int i = length - 1; i >= 0; i--) { 
 		if (str[i] == '_') { 
             str[i] = '\0';     
-            printf("%s_ ", &(str[i]) + 1); 
+            printf("%s_", &(str[i]) + 1); 
         } 
     }  
     printf("%s", str); 
